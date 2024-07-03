@@ -16,10 +16,10 @@ const io = new SocketServer(server, { cors: { origin: '*' } })
 
 io.on('connection', socket => {
 
-    socket.on('message', ( message) => {
+    socket.on('message', (message) => {
         console.log('message: ' + message)
         // socket.broadcast.emit('server', 'authorizeserver')
-        socket.broadcast.emit('server', 'authorizeserver')
+        socket.broadcast.emit('server', message)
     })
 
 })
